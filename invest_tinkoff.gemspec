@@ -5,6 +5,7 @@ require 'invest_tinkoff/version'
 Gem::Specification.new do |s|
   s.name        = 'invest_tinkoff'
   s.version     = '0.9.0'
+  s.platform    = Gem::Platform::RUBY
   s.date        = '2022-05-23'
   s.summary     = 'invest_tinkoff'
   s.description = 'Tinkoff Invest Ruby Rest API Gem'
@@ -14,4 +15,8 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.homepage    = 'https://github.com/blackchestnut/invest_tinkoff'
   s.license     = 'MIT'
+
+  s.required_ruby_version = '>= 2.3.0'
+
+  s.add_runtime_dependency 'httparty', '>= 0.20.0'
 end
