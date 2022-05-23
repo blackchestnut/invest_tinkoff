@@ -4,7 +4,7 @@ require 'invest_tinkoff/version'
 
 Gem::Specification.new do |s|
   s.name        = 'invest_tinkoff'
-  s.version     = '0.9.0'
+  s.version     = InvestTinkoff::VERSION
   s.platform    = Gem::Platform::RUBY
   s.date        = '2022-05-23'
   s.summary     = 'invest_tinkoff'
