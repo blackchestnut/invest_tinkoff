@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'invest_tinkoff/client_base'
+
 module InvestTinkoff
   module V1
   end
