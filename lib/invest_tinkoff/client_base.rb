@@ -4,7 +4,7 @@ module InvestTinkoff
   class ClientBase
     include HTTParty
 
-    def initialize token:, broker_account_id:, logger: nil
+    def initialize token:, broker_account_id: nil, logger: nil
       @token = token
       @broker_account_id = broker_account_id
       @logger = logger
