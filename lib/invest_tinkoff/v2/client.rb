@@ -431,34 +431,32 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
 
   # Метод выставления стоп-заявки.
   # https://tinkoff.github.io/investAPI/stoporders/#poststoporder
-  def create_stop_order account_id:, figi:, quantity:, price:, stop_price:, expiration_type: nil
-    # TODO: Еще остались не проброшенными некоторые аргументы.
-    # {
-    #   "figi": "string",
-    #   "quantity": "string",
-    #   "price": {
-    #     "nano": 6,
-    #     "units": "units"
-    #   },
-    #   "stopPrice": {
-    #     "nano": 6,
-    #     "units": "units"
-    #   },
-    #   "direction": "STOP_ORDER_DIRECTION_UNSPECIFIED",
-    #   "accountId": "string",
-    #   "expirationType": "STOP_ORDER_EXPIRATION_TYPE_UNSPECIFIED",
-    #   "stopOrderType": "STOP_ORDER_TYPE_UNSPECIFIED",
-    #   "expireDate": "2022-05-15T16:08:27.339Z"
-    # }
+  #
+  # @account_id: String
+  # @figi: String, пример: 'BBG000B9XRY4'
+  # @quantity: Integer
+  # @price: Float
+  # @stop_price: Float
+  # @expiration_type: InvestTinkoff::V2::StopOrderExpirationType
+  # @stop_order_type: InvestTinkoff::V2::StopOrderType
+  def create_stop_order(
+    account_id:,
+    figi:,
+    quantity:,
+    price:,
+    stop_price:,
+    expiration_type: InvestTinkoff::V2::StopOrderExpirationType::UNSPECIFIED,
+    stop_order_type: InvestTinkoff::V2::StopOrderType::UNSPECIFIED,
+    expire_date:
     body = {
+      accountId: account_id,
       figi: figi,
       quantity: quantity,
       price: InvestTinkoff::V2::Quotation.create(price),
       stopPrice: InvestTinkoff::V2::Quotation.create(stop_price),
-      # ...
-      accountId: account_id,
-      expirationType: expiration_type || StopOrderExpirationType::UNSPECIFIED
-      # ...
+      expirationType: expiration_type || StopOrderExpirationType::UNSPECIFIED,
+      stop_order_type: stop_order_type || InvestTinkoff::V2::StopOrderType::UNSPECIFIED,
+      expire_date: expire_date.strftime(TIME_FORMAT)
     }
     stop_order_request '/PostStopOrder', body
   end
