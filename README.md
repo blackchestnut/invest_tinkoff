@@ -22,9 +22,7 @@ https://www.rubydoc.info/gems/invest_tinkoff/0.9.4/index
 client = InvestTinkoff::V1::SandboxClient.new token: 'ВАШ_ТОКЕН'
 ```
 
-### Методы
-
-#### Операции с заявками
+### Операции с заявками
 
 Получение списка активных заявок
 ```ruby
@@ -46,7 +44,7 @@ client.orders_market_order figi:, operation:, lots:
 client.orders_cancel id
 ```
 
-##### Операции с портфелем пользователя
+### Операции с портфелем пользователя
 
 Получение портфеля клиента
 ```ruby
