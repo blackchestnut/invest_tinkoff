@@ -5,9 +5,9 @@ class InvestTinkoff::V1::SandboxClient < InvestTinkoff::V1::Client
 
   attr_accessor :broker_account_id
 
-  # token - sandbox API token
-  # broker_account_id (опционально) - идентификатор счета
-  # logger (опиционально) - например: Rails.logger
+  # @param token [String] sandbox API token
+  # @param broker_account_id [String] optional идентификатор счета
+  # @param logger [Object] optional например: Rails.logger
   def initialize token:, broker_account_id: nil, logger: nil
     super(
       token: token,
@@ -31,7 +31,8 @@ class InvestTinkoff::V1::SandboxClient < InvestTinkoff::V1::Client
   end
 
   # Выставление баланса по валютным позициям
-  # Пример currency: :RUB, :USD, :EUR и т.д.
+  # @param currency [String] :RUB, :USD, :EUR и т.д.
+  # @param balance [Float] баланс
   def currencies_balance currency:, balance:
     register
     body = { currency: currency, balance: balance }
@@ -39,7 +40,8 @@ class InvestTinkoff::V1::SandboxClient < InvestTinkoff::V1::Client
   end
 
   # Выставление баланса по инструментным позициям
-  # Пример figi: 'BBG000B9XRY4'
+  # @param figi [String] Пример figi: 'BBG000B9XRY4'
+  # @param balance [Float] баланс
   def position_balance figi:, balance:
     register
     body = { figi: figi, balance: balance }
