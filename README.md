@@ -16,16 +16,15 @@ gem install invest_tinkoff
 ### RubyDoc.info
 https://www.rubydoc.info/gems/invest_tinkoff/0.9.4/index
 
-### V1
+## V1
 
-#### Использование
 ```ruby
 client = InvestTinkoff::V1::SandboxClient.new token: 'ВАШ_ТОКЕН'
 ```
 
-#### Методы
+### Методы
 
-##### Операции с заявками
+#### Операции с заявками
 
 Получение списка активных заявок
 ```ruby
