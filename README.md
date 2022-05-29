@@ -16,7 +16,13 @@ gem install invest_tinkoff
 ### RubyDoc.info
 https://www.rubydoc.info/gems/invest_tinkoff/0.9.4/index
 
+## V2
+> TODO
+
 ## V1
+`Deprecated`
+> Все новые рабочие токены доступны только для версии V2.
+> Поддержка первой версии будет завершена в 2022 году.
 
 ```ruby
 client = InvestTinkoff::V1::SandboxClient.new token: 'ВАШ_ТОКЕН'
@@ -26,32 +32,74 @@ client = InvestTinkoff::V1::SandboxClient.new token: 'ВАШ_ТОКЕН'
 
 Получение списка активных заявок
 ```ruby
-client.orders
+orders
 ```
 
 Создание лимитной заявки
 ```ruby
-client.orders_limit_order figi:, operation:, lots:, price:
+orders_limit_order figi:, operation:, lots:, price:
 ```
 
 Создание рыночной заявки
 ```ruby
-client.orders_market_order figi:, operation:, lots:
+orders_market_order figi:, operation:, lots:
 ```
 
 Отмена заявки
 ```ruby
-client.orders_cancel id
+orders_cancel id
 ```
 
 ### Операции с портфелем пользователя
 
 Получение портфеля клиента
 ```ruby
-client.portfolio
+portfolio
 ```
 
 Получение валютных активов клиента
 ```ruby
-client.portfolio_currencies
+portfolio_currencies
+```
+
+### Получении информации по бумагам
+
+Получение списка акций
+```ruby
+market_stocks
+```
+
+Получение списка облигаций
+```ruby
+market_bonds
+```
+
+Получение списка ETF
+```ruby
+market_etfs
+```
+
+Получение списка валютных пар
+```ruby
+market_currencies
+```
+
+Получение стакана по FIGI
+```ruby
+market_orderbook figi:, depth: 20
+```
+
+Получение исторических свечей по FIGI
+```ruby
+market_candles figi:, from:, to:, interval:
+```
+
+Получение инструмента по FIGI
+```ruby
+market_search_by_figi figi
+```
+
+Получение инструмента по тикеру
+```ruby
+market_search_by_ticker ticker
 ```
