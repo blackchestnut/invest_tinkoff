@@ -103,3 +103,43 @@ market_search_by_figi figi
 ```ruby
 market_search_by_ticker ticker
 ```
+
+### Получении информации по операциям
+Получение списка операций
+```ruby
+operations from:, to:, figi: nil
+```
+
+### Получении информации по брокерским счетам
+Получение брокерских счетов клиента
+```ruby
+user_accounts
+```
+
+## V1 Sandbox
+
+### Операции в sandbox
+Создание счета и выставление баланса по валютным позициям
+```ruby
+register
+```
+
+Выставление баланса по валютным позициям
+```ruby
+currencies_balance currency:, balance:
+```
+
+Выставление баланса по инструментным позициям
+```ruby
+position_balance figi:, balance:
+```
+
+Удаление всех позиций клиента
+```ruby
+clear
+```
+
+Удаление счета клиента
+```ruby
+remove
+```
