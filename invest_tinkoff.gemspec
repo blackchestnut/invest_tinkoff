@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = 'invest_tinkoff'
   s.description = 'Tinkoff Invest Ruby Rest API Gem'
   s.authors     = ['Alexander Kalinichev']
-  s.email       = 'alexander.kalinichev@gmail.com'
+  s.email       = 'alex@agileseason.com'
   s.files       = Dir.glob("{bin,lib}/**/*")
   s.require_paths = ['lib']
   s.homepage    = 'https://github.com/blackchestnut/invest_tinkoff'
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3.0'
 
   s.add_runtime_dependency 'httparty', '~> 0.20', '>= 0.20.0'
+  s.add_development_dependency 'rspec' '~>3.10.0'
 end

@@ -8,6 +8,8 @@ module InvestTinkoff
   end
 end
 
+require 'bigdecimal'
+require 'bigdecimal/util'
 require 'invest_tinkoff/client_base'
 
 require 'invest_tinkoff/v1/client'

@@ -448,14 +448,15 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
     expiration_type: InvestTinkoff::V2::StopOrderExpirationType::UNSPECIFIED,
     stop_order_type: InvestTinkoff::V2::StopOrderType::UNSPECIFIED,
     expire_date:
+  )
     body = {
       accountId: account_id,
       figi: figi,
       quantity: quantity,
       price: InvestTinkoff::V2::Quotation.create(price),
       stopPrice: InvestTinkoff::V2::Quotation.create(stop_price),
-      expirationType: expiration_type || StopOrderExpirationType::UNSPECIFIED,
-      stop_order_type: stop_order_type || InvestTinkoff::V2::StopOrderType::UNSPECIFIED,
+      expirationType: (expiration_type || StopOrderExpirationType::UNSPECIFIED),
+      stop_order_type: (stop_order_type || InvestTinkoff::V2::StopOrderType::UNSPECIFIED),
       expire_date: expire_date.strftime(TIME_FORMAT)
     }
     stop_order_request '/PostStopOrder', body
