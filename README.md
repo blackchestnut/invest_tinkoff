@@ -18,6 +18,62 @@ gem install invest_tinkoff
 ## V2
 > TODO
 
+### Операций по счёту
+
+Метод получения списка операций по счёту
+
+> https://tinkoff.github.io/investAPI/operations/#getoperations
+
+```ruby
+operations(
+  account_id:,
+  figi:,
+  from:,
+  to:,
+  state: InvestTinkoff::V2::OperationState::UNSPECIFIED
+)
+```
+
+Метод получения портфеля по счёту
+
+> https://tinkoff.github.io/investAPI/operations/#getportfolio
+
+```ruby
+portfolio account_id:
+```
+
+Метод получения списка позиций по счёту
+
+> https://tinkoff.github.io/investAPI/operations/#getpositions
+
+```ruby
+positions account_id:
+```
+
+Метод получения доступного остатка для вывода средств
+
+> https://tinkoff.github.io/investAPI/operations/#getwithdrawlimits
+
+```ruby
+withdraw_limits account_id:
+```
+
+Метод получения брокерского отчёта `NotImplemented`
+
+> https://tinkoff.github.io/investAPI/operations/#getbrokerreport
+
+```ruby
+broker_report
+```
+
+Метод получения отчёта "Справка о доходах за пределами РФ" `NotImplemented`
+
+> https://tinkoff.github.io/investAPI/operations/#getdividendsforeignissuer
+
+```ruby
+dividends_foreign_issuer
+```
+
 ### Торговые поручения
 
 Метод получения списка активных заявок по счёту
