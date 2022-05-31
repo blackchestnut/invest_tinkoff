@@ -519,6 +519,8 @@ user_tariff
 client = InvestTinkoff::V2::SandboxClient.new token: 'ВАШ_ТОКЕН_ПЕСОЧНИЦЫ'
 ```
 
+### Операции в sandbox
+
 Метод отмены торгового поручения в песочнице
 
 > https://tinkoff.github.io/investAPI/sandbox/#cancelsandboxorder
