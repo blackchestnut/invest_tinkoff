@@ -18,6 +18,32 @@ gem install invest_tinkoff
 ## V2
 > TODO
 
+### Получение справочной информации о пользователе Тинькофф Инвестиций
+
+Метод получения счетов пользователя
+https://tinkoff.github.io/investAPI/users/#getaccounts
+```ruby
+accounts
+```
+
+Метод получения информации о пользователе
+https://tinkoff.github.io/investAPI/users/#getinfo
+```ruby
+info
+```
+
+Расчёт маржинальных показателей по счёту
+https://tinkoff.github.io/investAPI/users/#getmarginattributes
+```ruby
+margin_attributes account_id:
+```
+
+Текущий тариф пользователя (лимиты запросов к API)
+https://tinkoff.github.io/investAPI/users/#getusertariff
+```ruby
+user_tariff
+```
+
 ## V1
 `Deprecated`
 > Все новые рабочие токены доступны только для версии V2.

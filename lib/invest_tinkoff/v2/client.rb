@@ -474,22 +474,26 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # ==========================================
 
   # Метод получения счетов пользователя.
+  # https://tinkoff.github.io/investAPI/users/#getaccounts
   def accounts
     user_service_request '/GetAccounts'
   end
 
   # Метод получения информации о пользователе.
+  # https://tinkoff.github.io/investAPI/users/#getinfo
   def info
     user_service_request '/GetInfo'
   end
 
   # Расчёт маржинальных показателей по счёту.
+  # https://tinkoff.github.io/investAPI/users/#getmarginattributes
   def margin_attributes account_id:
     body = { accountId: account_id }
     user_service_request '/GetMarginAttributes', body
   end
 
   # Текущий тариф пользователя (лимиты запросов к API).
+  # https://tinkoff.github.io/investAPI/users/#getusertariff
   def user_tariff
     user_service_request '/GetUserTariff'
   end
