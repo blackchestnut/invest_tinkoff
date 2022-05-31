@@ -13,8 +13,7 @@ gem install invest_tinkoff
 
 ## Docs
 
-### RubyDoc.info
-https://www.rubydoc.info/gems/invest_tinkoff/0.9.4/index
+[RubyDoc.info](https://www.rubydoc.info/gems/invest_tinkoff/0.9.6)
 
 ## V2
 > TODO
