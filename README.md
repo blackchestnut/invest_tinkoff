@@ -44,6 +44,7 @@ candles(
 
 ```ruby
 # @figis: String, пример: ['BBG000B9XRY4', 'BBG000BWXBC2']
+
 last_prices figis:
 ```
 
@@ -87,6 +88,12 @@ trading_status figi:
 > https://tinkoff.github.io/investAPI/operations/#getoperations
 
 ```ruby
+# @account_id: String
+# @figi: String, пример: 'BBG000B9XRY4'
+# @from: Time
+# @to: Time
+# @state (опиционально): InvestTinkoff::V2::OperationState
+
 operations(
   account_id:,
   figi:,
@@ -101,6 +108,8 @@ operations(
 > https://tinkoff.github.io/investAPI/operations/#getportfolio
 
 ```ruby
+# @account_id: String
+
 portfolio account_id:
 ```
 
@@ -109,6 +118,8 @@ portfolio account_id:
 > https://tinkoff.github.io/investAPI/operations/#getpositions
 
 ```ruby
+# @account_id: String
+
 positions account_id:
 ```
 
@@ -117,6 +128,8 @@ positions account_id:
 > https://tinkoff.github.io/investAPI/operations/#getwithdrawlimits
 
 ```ruby
+# @account_id: String
+
 withdraw_limits account_id:
 ```
 
@@ -143,6 +156,8 @@ dividends_foreign_issuer
 > https://tinkoff.github.io/investAPI/orders/#getorders
 
 ```ruby
+# @account_id: String
+
 orders account_id:
 ```
 
@@ -151,6 +166,14 @@ orders account_id:
 > https://tinkoff.github.io/investAPI/orders/#postorder
 
 ```ruby
+# @account_id: String
+# @figi: String
+# @quantity: Integer
+# @price: Float
+# @direction: InvestTinkoff::V2::OrderDirection
+# @order_type: InvestTinkoff::V2::OrderType
+# @order_id: String (max length 36)
+
 create_order(
   account_id:,
   figi:,
@@ -167,6 +190,9 @@ create_order(
 > https://tinkoff.github.io/investAPI/orders/#getorderstate
 
 ```ruby
+# @account_id: String
+# @order_id: String
+
 order_state account_id:, order_id:
 ```
 
@@ -175,6 +201,9 @@ order_state account_id:, order_id:
 > https://tinkoff.github.io/investAPI/orders/#cancelorder
 
 ```ruby
+# @account_id: String
+# @order_id: String
+
 cancel_order account_id:, order_id:
 ```
 
@@ -185,6 +214,8 @@ cancel_order account_id:, order_id:
 > https://tinkoff.github.io/investAPI/stoporders/#getstoporders
 
 ```ruby
+# @account_id: String
+
 stop_orders account_id:
 ```
 
@@ -193,6 +224,14 @@ stop_orders account_id:
 > https://tinkoff.github.io/investAPI/stoporders/#poststoporder
 
 ```ruby
+# @account_id: String
+# @figi: String, пример: 'BBG000B9XRY4'
+# @quantity: Integer
+# @price: Float
+# @stop_price: Float
+# @expiration_type: InvestTinkoff::V2::StopOrderExpirationType
+# @stop_order_type: InvestTinkoff::V2::StopOrderType
+
 create_stop_order(
   account_id:,
   figi:,
@@ -210,6 +249,9 @@ create_stop_order(
 > https://tinkoff.github.io/investAPI/stoporders/#cancelstoporder
 
 ```ruby
+# @account_id: String
+# @order_id: String
+
 cancel_stop_order account_id:, order_id:
 ```
 
@@ -236,6 +278,8 @@ info
 > https://tinkoff.github.io/investAPI/users/#getmarginattributes
 
 ```ruby
+# @account_id: String
+
 margin_attributes account_id:
 ```
 

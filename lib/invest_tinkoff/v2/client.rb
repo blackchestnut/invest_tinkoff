@@ -352,6 +352,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
 
   # Метод получения доступного остатка для вывода средств.
   # https://tinkoff.github.io/investAPI/operations/#getwithdrawlimits
+  #
+  # @account_id: String
   def withdraw_limits account_id:
     operation_request '/GetWithdrawLimits', { accountId: account_id }
   end
@@ -425,6 +427,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
 
   # Метод получения списка активных стоп заявок по счёту.
   # https://tinkoff.github.io/investAPI/stoporders/#getstoporders
+  #
+  # @account_id: String
   def stop_orders account_id:
     body = { accountId: account_id }
     stop_order_request '/GetStopOrders', body
@@ -465,6 +469,9 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
 
   # Метод отмены стоп-заявки.
   # https://tinkoff.github.io/investAPI/stoporders/#cancelstoporder
+  #
+  # @account_id: String
+  # @order_id: String
   def cancel_stop_order account_id:, order_id:
     body = { accountId: account_id, stopOrderId: order_id }
     stop_order_request '/CancelStopOrder', body
@@ -488,6 +495,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
 
   # Расчёт маржинальных показателей по счёту.
   # https://tinkoff.github.io/investAPI/users/#getmarginattributes
+  #
+  # @account_id: String
   def margin_attributes account_id:
     body = { accountId: account_id }
     user_service_request '/GetMarginAttributes', body
