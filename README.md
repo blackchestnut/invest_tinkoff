@@ -18,28 +18,67 @@ gem install invest_tinkoff
 ## V2
 > TODO
 
+### Стоп-заявки
+
+Метод получения списка активных стоп заявок по счёту
+
+https://tinkoff.github.io/investAPI/stoporders/#getstoporders
+
+```ruby
+stop_orders account_id:
+```
+
+Метод выставления стоп-заявки
+
+https://tinkoff.github.io/investAPI/stoporders/#poststoporder
+
+```ruby
+create_stop_order(
+  account_id:,
+  figi:,
+  quantity:,
+  price:,
+  stop_price:,
+  expire_date:,
+  expiration_type: InvestTinkoff::V2::StopOrderExpirationType::UNSPECIFIED,
+  stop_order_type: InvestTinkoff::V2::StopOrderType::UNSPECIFIED,
+)
+```
+
+Метод отмены стоп-заявки
+
+https://tinkoff.github.io/investAPI/stoporders/#cancelstoporder
+
+```ruby
+cancel_stop_order account_id:, order_id:
+```
+
 ### Получение справочной информации о пользователе Тинькофф Инвестиций
 
 Метод получения счетов пользователя
+
 https://tinkoff.github.io/investAPI/users/#getaccounts
+
 ```ruby
 accounts
 ```
 
 Метод получения информации о пользователе
+
 https://tinkoff.github.io/investAPI/users/#getinfo
+
 ```ruby
 info
 ```
 
 Расчёт маржинальных показателей по счёту
-https://tinkoff.github.io/investAPI/users/#getmarginattributes
+- https://tinkoff.github.io/investAPI/users/#getmarginattributes
 ```ruby
 margin_attributes account_id:
 ```
 
 Текущий тариф пользователя (лимиты запросов к API)
-https://tinkoff.github.io/investAPI/users/#getusertariff
+- https://tinkoff.github.io/investAPI/users/#getusertariff
 ```ruby
 user_tariff
 ```

@@ -445,9 +445,9 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
     quantity:,
     price:,
     stop_price:,
+    expire_date:,
     expiration_type: InvestTinkoff::V2::StopOrderExpirationType::UNSPECIFIED,
-    stop_order_type: InvestTinkoff::V2::StopOrderType::UNSPECIFIED,
-    expire_date:
+    stop_order_type: InvestTinkoff::V2::StopOrderType::UNSPECIFIED
   )
     body = {
       accountId: account_id,
