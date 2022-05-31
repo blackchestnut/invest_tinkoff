@@ -18,6 +18,68 @@ gem install invest_tinkoff
 ## V2
 > TODO
 
+### Получения биржевой информации
+
+Метод запроса исторических свечей по инструменту
+
+> https://tinkoff.github.io/investAPI/marketdata/#getcandles
+
+```ruby
+# @figi: String, пример: 'BBG000B9XRY4'
+# @from: Time, пример: 1.hour.ago
+# @to: Time, пример: Time.zone.now
+# @interval: InvestTinkoff::V2::CandleInterval
+
+candles(
+  figi:,
+  from:,
+  to:,
+  interval: InvestTinkoff::V2::CandleInterval::HOUR
+)
+```
+
+Метод запроса последних цен по инструментам
+
+> https://tinkoff.github.io/investAPI/marketdata/#getlastprices
+
+```ruby
+# @figis: String, пример: ['BBG000B9XRY4', 'BBG000BWXBC2']
+last_prices figis:
+```
+
+Метод запроса последних обезличенных сделок по инструменту
+
+> https://tinkoff.github.io/investAPI/marketdata/#getlasttrades
+
+```ruby
+# @figi: String, пример: 'BBG000B9XRY4'
+# @from: Time, пример: 1.hour.ago
+# @to: Time, пример: Time.zone.now
+
+last_trades figi:, from:, to:
+```
+
+Метод получения стакана по инструменту
+
+> https://tinkoff.github.io/investAPI/marketdata/#getorderbook
+
+```ruby
+# @figi: String, пример: 'BBG000B9XRY4'
+# @depth: Integer
+
+order_book figi:, depth: 10
+```
+
+Метод запроса статуса торгов по инструментам
+
+> https://tinkoff.github.io/investAPI/marketdata/#gettradingstatus
+
+```ruby
+# @figi: String, пример: 'BBG000B9XRY4'
+
+trading_status figi:
+```
+
 ### Операции по счёту
 
 Метод получения списка операций по счёту
