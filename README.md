@@ -15,7 +15,7 @@ gem install invest_tinkoff
 
 [RubyDoc.info](https://www.rubydoc.info/gems/invest_tinkoff/0.9.6)
 
-## V2
+## API v2
 
 ```ruby
 client = InvestTinkoff::V2::Client.new token: 'ВАШ_ТОКЕН'
@@ -513,7 +513,7 @@ margin_attributes account_id:
 user_tariff
 ```
 
-## V2 Sandbox
+## API v2 Sandbox
 
 ```ruby
 client = InvestTinkoff::V2::SandboxClient.new token: 'ВАШ_ТОКЕН_ПЕСОЧНИЦЫ'
@@ -653,9 +653,7 @@ create_sandbox_order(
 sandbox_pay_in account_id:, amount:, currency:
 ```
 
----
-
-## V1
+## API v1
 `Deprecated`
 > Все новые рабочие токены доступны только для версии V2.
 > Поддержка первой версии будет завершена в 2022 году.
@@ -752,9 +750,7 @@ operations from:, to:, figi: nil
 user_accounts
 ```
 
----
-
-## V1 Sandbox
+## API v1 Sandbox
 
 > Все операции [рабочего клиента](#v1) плюс:
 
