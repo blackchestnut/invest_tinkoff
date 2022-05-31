@@ -361,6 +361,7 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # ==========================================
 
   # Метод получения списка активных заявок по счёту.
+  # https://tinkoff.github.io/investAPI/orders/#getorders
   #
   # @account_id: String
   def orders account_id:
