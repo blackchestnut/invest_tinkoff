@@ -217,6 +217,12 @@ instrument_by id_type:, id:, class_code: nil
 
 share_by id_type:, id:, class_code: nil
 ```
+```ruby
+# Примеры:
+
+client.share_by id_type: InvestTinkoff::V2::InstrumentIdType::FIGI, id: 'BBG000B9XRY4'
+client.share_by id_type: InvestTinkoff::V2::InstrumentIdType::TICKER, id: 'AAPL', class_code: 'SPBXM'
+```
 
 Метод получения списка акций
 
@@ -404,6 +410,19 @@ create_order(
   direction:,
   order_type:,
   order_id:
+)
+```
+```ruby
+# Пример:
+
+client.create_order(
+  account_id: 'ВАШ_ID_СЧЁТА',
+  figi: 'BBG000BL9C59',
+  quantity: 1,
+  price: 11.35,
+  direction: InvestTinkoff::V2::OrderDirection::BUY,
+  order_type: InvestTinkoff::V2::OrderType::LIMIT,
+  order_id: 'ВАШ_ВНУТРЕННИЙ_ID_ЗАЯВКИ'
 )
 ```
 
