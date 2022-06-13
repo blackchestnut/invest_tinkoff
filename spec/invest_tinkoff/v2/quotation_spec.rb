@@ -12,7 +12,7 @@ describe InvestTinkoff::V2::Quotation do
     it do
       is_expected.to have_attributes(
         units: '114',
-        nano: 250000000
+        nano: 250_000_000
       )
     end
   end
@@ -23,7 +23,7 @@ describe InvestTinkoff::V2::Quotation do
     it do
       is_expected.to have_attributes(
         units: '-200',
-        nano: -200000000
+        nano: -200_000_000
       )
     end
   end
@@ -34,7 +34,7 @@ describe InvestTinkoff::V2::Quotation do
     it do
       is_expected.to have_attributes(
         units: '0',
-        nano: 10000000
+        nano: 10_000_000
       )
     end
   end
@@ -45,7 +45,29 @@ describe InvestTinkoff::V2::Quotation do
     it do
       is_expected.to have_attributes(
         units: '-0',
-        nano: -10000000
+        nano: -10_000_000
+      )
+    end
+  end
+
+  context '22.03' do
+    let(:price) { 22.03 }
+
+    it do
+      is_expected.to have_attributes(
+        units: '22',
+        nano: 30_000_000
+      )
+    end
+  end
+
+  context '21.88' do
+    let(:price) { 21.88 }
+
+    it do
+      is_expected.to have_attributes(
+        units: '21',
+        nano: 880_000_000
       )
     end
   end
