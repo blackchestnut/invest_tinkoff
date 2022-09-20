@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'httparty'
+
 module InvestTinkoff
   class ClientBase
     include HTTParty
