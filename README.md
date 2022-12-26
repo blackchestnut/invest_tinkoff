@@ -111,6 +111,12 @@ etfs instrument_status: InvestTinkoff::V2::InstrumentStatus::BASE
 
 future_by id_type:, id:, class_code: nil
 ```
+```ruby
+# Примеры:
+
+client.future_by id_type: InvestTinkoff::V2::InstrumentIdType::FIGI, id: 'FUTSI0323000'
+client.future_by id_type: InvestTinkoff::V2::InstrumentIdType::TICKER, id: 'SiH3', class_code: 'SPBFUT'
+```
 
 Метод получения списка фьючерсов
 
