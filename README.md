@@ -211,6 +211,12 @@ futures_margin figi:
 
 instrument_by id_type:, id:, class_code: nil
 ```
+```ruby
+# Примеры:
+
+client.instrument_by id_type: InvestTinkoff::V2::InstrumentIdType::FIGI, id: 'FUTSI0323000'
+client.instrument_by id_type: InvestTinkoff::V2::InstrumentIdType::TICKER, id: 'SiH3', class_code: 'SPBFUT'
+```
 
 Метод получения акции по её идентификатору
 
