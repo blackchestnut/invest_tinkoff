@@ -3,7 +3,7 @@
 class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   base_uri 'https://invest-public-api.tinkoff.ru/rest/'
 
-  TIME_FORMAT = '%Y-%m-%dT%H:%m:%S.000Z'
+  TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.000Z'
 
   def initialize token:, logger: nil
     super(
@@ -118,8 +118,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # https://tinkoff.github.io/investAPI/instruments/#getaccruedinterests
   #
   # @figi: String, пример: 'BBG00X6ZGSY7'
-  # @from: Time, пример: 1.year.ago
-  # @to: Time, пример: 2.months.from_now
+  # @from: Time, пример: 1.year.ago.utc
+  # @to: Time, пример: 2.months.from_now.utc
   def accrued_interests figi:, from:, to:
     body = {
       figi: figi,
@@ -147,8 +147,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # https://tinkoff.github.io/investAPI/instruments/#getbondcoupons
   #
   # @figi: String, пример: 'BBG00X6ZGSY7'
-  # @from: Time, пример: 1.year.ago
-  # @to: Time, пример: 6.months.from_now
+  # @from: Time, пример: 1.year.ago.utc
+  # @to: Time, пример: 6.months.from_now.utc
   def bond_coupons figi:, from:, to:
     body = {
       figi: figi,
@@ -162,8 +162,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # https://tinkoff.github.io/investAPI/instruments/#getdividends
   #
   # @figi: String, пример: 'BBG000B9XRY4'
-  # @from: Time, пример: 1.year.ago
-  # @to: Time, пример: 1.month.from_now
+  # @from: Time, пример: 1.year.ago.utc
+  # @to: Time, пример: 1.month.from_now.utc
   def dividends figi:, from:, to:
     body = {
       figi: figi,
@@ -225,8 +225,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # https://tinkoff.github.io/investAPI/instruments/#tradingschedulesrequest
   #
   # @exchange: String, пример: 'MOEX'
-  # @from: Time, пример: 1.day.from_now
-  # @to: Time, пример: 5.days.from_now
+  # @from: Time, пример: 1.day.from_now.utc
+  # @to: Time, пример: 5.days.from_now.utc
   def trading_schedules exchange:, from:, to:
     body = {
       exchange: exchange,
@@ -244,8 +244,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # https://tinkoff.github.io/investAPI/marketdata/#getcandles
   #
   # @figi: String, пример: 'BBG000B9XRY4'
-  # @from: Time, пример: 1.hour.ago
-  # @to: Time, пример: Time.zone.now
+  # @from: Time, пример: 1.hour.ago.utc
+  # @to: Time, пример: Time.zone.now.utc
   # @interval: InvestTinkoff::V2::CandleInterval
   def candles figi:, from:, to:, interval: InvestTinkoff::V2::CandleInterval::HOUR
     body = {
@@ -269,8 +269,8 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # https://tinkoff.github.io/investAPI/marketdata/#getlasttrades
   #
   # @figi: String, пример: 'BBG000B9XRY4'
-  # @from: Time, пример: 1.hour.ago
-  # @to: Time, пример: Time.zone.now
+  # @from: Time, пример: 1.hour.ago.utc
+  # @to: Time, пример: Time.zone.now.utc
   def last_trades figi:, from:, to:
     body = {
       figi: figi,
@@ -442,6 +442,7 @@ class InvestTinkoff::V2::Client < InvestTinkoff::ClientBase
   # @quantity: Integer
   # @price: Float
   # @stop_price: Float
+  # @expire_date: Time
   # @expiration_type: InvestTinkoff::V2::StopOrderExpirationType
   # @stop_order_type: InvestTinkoff::V2::StopOrderType
   def create_stop_order(
