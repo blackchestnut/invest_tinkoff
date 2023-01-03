@@ -283,9 +283,13 @@ candles(
 > https://tinkoff.github.io/investAPI/marketdata/#getlastprices
 
 ```ruby
-# @figis: String, пример: ['BBG000B9XRY4', 'BBG000BWXBC2']
+# @figis: [String]
 
 last_prices figis:
+```
+```ruby
+# Примеры:
+client.last_prices figis: ['BBG0013HGFT4', 'BBG0013HJJ31']
 ```
 
 Метод запроса последних обезличенных сделок по инструменту
