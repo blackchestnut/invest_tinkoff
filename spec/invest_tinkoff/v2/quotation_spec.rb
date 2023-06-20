@@ -11,7 +11,7 @@ describe InvestTinkoff::V2::Quotation do
 
     it do
       is_expected.to have_attributes(
-        units: '114',
+        units: 114,
         nano: 250_000_000
       )
     end
@@ -22,7 +22,7 @@ describe InvestTinkoff::V2::Quotation do
 
     it do
       is_expected.to have_attributes(
-        units: '-200',
+        units: -200,
         nano: -200_000_000
       )
     end
@@ -33,7 +33,7 @@ describe InvestTinkoff::V2::Quotation do
 
     it do
       is_expected.to have_attributes(
-        units: '0',
+        units: 0,
         nano: 10_000_000
       )
     end
@@ -44,7 +44,7 @@ describe InvestTinkoff::V2::Quotation do
 
     it do
       is_expected.to have_attributes(
-        units: '-0',
+        units: -0,
         nano: -10_000_000
       )
     end
@@ -55,7 +55,7 @@ describe InvestTinkoff::V2::Quotation do
 
     it do
       is_expected.to have_attributes(
-        units: '22',
+        units: 22,
         nano: 30_000_000
       )
     end
@@ -66,7 +66,7 @@ describe InvestTinkoff::V2::Quotation do
 
     it do
       is_expected.to have_attributes(
-        units: '21',
+        units: 21,
         nano: 880_000_000
       )
     end

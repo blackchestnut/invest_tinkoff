@@ -10,7 +10,7 @@ class InvestTinkoff::V2::Quotation
     units = price.to_i
     nano = ((price.to_d - units) * 1_000_000_000).to_i
     new(
-      "#{price.positive? ? '' : '-'}#{units.abs}".to_i,
+      units,
       nano
     )
   end
