@@ -14,4 +14,8 @@ class InvestTinkoff::V2::Quotation
       nano
     )
   end
+
+  def to_json(*)
+    to_h.to_json
+  end
 end
